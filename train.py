@@ -83,8 +83,10 @@ def train_fn(disc_O, disc_Y, gen_Y, gen_O, loader, opt_disc, opt_gen, l1, mse, d
         g_scaler.update()
 
         if idx % 200 == 0:
-            save_image(fake_old*0.5+0.5, f"saved_images/old_{idx}.png")
-            save_image(fake_young*0.5+0.5, f"saved_images/young_{idx}.png")
+            # save_image(fake_old*0.5+0.5, f"saved_images/old_{idx}.png")
+            # save_image(fake_young*0.5+0.5, f"saved_images/young_{idx}.png")
+            save_image(fake_old*0.5+0.5, f"old_{idx}.png")
+            save_image(fake_young*0.5+0.5, f"young_{idx}.png")
 
         loop.set_postfix(O_real=O_reals/(idx+1), O_fake=O_fakes/(idx+1))
 
