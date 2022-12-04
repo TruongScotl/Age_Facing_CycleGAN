@@ -1,0 +1,11 @@
+albumentations==1.3.0
+mtcnn==0.1.1
+numpy==1.23.3
+opencv_python==4.6.0.66
+Pillow==9.3.0
+python_resize_image==1.1.20
+scikit_image==0.19.3
+skimage==0.0
+torch==1.14.0.dev20221109
+torchvision==0.15.0.dev20221109
+tqdm==4.64.1
