@@ -91,12 +91,12 @@ def train_fn(disc_O, disc_Y, gen_Y, gen_O, loader, opt_disc, opt_gen, l1, mse, d
         loop.set_postfix(O_real=O_reals/(idx+1), O_fake=O_fakes/(idx+1))
 
 
-
+# torch.compile is avaiable with torch 2.0
 def main():
-    disc_O = Discriminator(in_channels=3).to(config.DEVICE)
-    disc_Y = Discriminator(in_channels=3).to(config.DEVICE)
-    gen_Y = Generator(img_channels=3, num_residuals=9).to(config.DEVICE)
-    gen_O = Generator(img_channels=3, num_residuals=9).to(config.DEVICE)
+    disc_O = torch.compile(Discriminator(in_channels=3)).to(config.DEVICE)
+    disc_Y = torch.compile(Discriminator(in_channels=3)).to(config.DEVICE)
+    gen_Y = torch.compile(Generator(img_channels=3, num_residuals=9)).to(config.DEVICE)
+    gen_O = torch.compile(Generator(img_channels=3, num_residuals=9)).to(config.DEVICE)
     opt_disc = optim.Adam(
         list(disc_O.parameters()) + list(disc_Y.parameters()),
         lr=config.LEARNING_RATE,
