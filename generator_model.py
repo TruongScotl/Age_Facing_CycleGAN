@@ -20,7 +20,7 @@ class ResidualBlock(nn.Module):
         super().__init__()
         self.block = nn.Sequential(
             ConvBlock(channels, channels, kernel_size = 3, padding=1),
-            ConvBlock(channels, channels, use_act=True, kernel_size=3, padding=1)
+            ConvBlock(channels, channels, use_act=False, kernel_size=3, padding=1) #not really know how can this make sense
         )
     def forward(self, x):
         return x + self.block(x)
