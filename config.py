@@ -15,10 +15,10 @@ NUM_WORKERS = 2
 NUM_EPOCHS = 20
 LOAD_MODEL = True
 SAVE_MODEL = True
-CHECKPOINT_GEN_O = "/kaggle/working/genh.pth.tar"
-CHECKPOINT_GEN_Y = "/kaggle/working/genz.pth.tar"
-CHECKPOINT_CRITIC_O = "/kaggle/working/critich.pth.tar"
-CHECKPOINT_CRITIC_Y = "/kaggle/working/criticz.pth.tar"
+CHECKPOINT_GEN_O = "genh.pth.tar"
+CHECKPOINT_GEN_Y = "genz.pth.tar"
+CHECKPOINT_CRITIC_O = "critich.pth.tar"
+CHECKPOINT_CRITIC_Y = "criticz.pth.tar"
 
 transforms = A.Compose(
     [
